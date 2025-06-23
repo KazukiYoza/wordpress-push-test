@@ -1,0 +1,12 @@
+# すべて無視
+*
+
+# .gitignore 自体は追跡対象
+!.gitignore
+
+# swell_child フォルダとすべての中身を追跡
+!wp-data/
+!wp-data/wp-content/
+!wp-data/wp-content/themes/
+!wp-data/wp-content/themes/swell_child/
+!wp-data/wp-content/themes/swell_child/**/*
