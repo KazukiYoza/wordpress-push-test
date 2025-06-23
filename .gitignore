@@ -4,6 +4,10 @@
 # .gitignore 自体は追跡対象
 !.gitignore
 
+!.github/
+!.github/workflows/
+!.github/workflows/deploy.yml
+
 # swell_child フォルダとすべての中身を追跡
 !wp-data/
 !wp-data/wp-content/
