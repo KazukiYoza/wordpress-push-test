@@ -1,7 +1,6 @@
 <?php
 
 /* 子テーマのfunctions.phpは、親テーマのfunctions.phpより先に読み込まれることに注意してください。 */
-// さくらサーバー上のWordPressと連携するかテスト
 
 /**
  * 親テーマのfunctions.phpのあとで読み込みたいコードはこの中に。
