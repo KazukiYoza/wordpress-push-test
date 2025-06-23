@@ -6,8 +6,8 @@
 /**
  * 親テーマのfunctions.phpのあとで読み込みたいコードはこの中に。
  */
-// add_filter('after_setup_theme', function(){
-// }, 11);
+add_filter('after_setup_theme', function(){
+}, 11);
 
 
 /**
