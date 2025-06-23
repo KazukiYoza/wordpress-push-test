@@ -12,6 +12,5 @@
 !wp-data/
 !wp-data/wp-content/
 !wp-data/wp-content/themes/
-!wp-data/wp-content/themes/**/*
-#!wp-data/wp-content/themes/swell_child/
-#!wp-data/wp-content/themes/swell_child/**/*
+!wp-data/wp-content/themes/swell_child/
+!wp-data/wp-content/themes/swell_child/**/*
