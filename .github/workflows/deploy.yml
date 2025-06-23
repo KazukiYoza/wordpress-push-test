@@ -1,25 +1,49 @@
-name: Deploy to Sakura Server via FTP
+# name: Deploy to Sakura Server via FTP
+
+# on:
+#   push:
+#     branches:
+#       - main  # または `master` など、使用しているブランチ名
+
+# jobs:
+#   ftp-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v3
+
+#     - name: Deploy to Sakura via FTP
+#       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+#       with:
+#         server: ${{ secrets.FTP_HOST }}
+#         username: ${{ secrets.FTP_USER }}
+#         password: ${{ secrets.FTP_PASSWORD }}
+#         server-dir: ${{ secrets.FTP_TARGET_DIR }}/
+#         exclude: |
+#           **/.git*
+#           **/.github*
+#           **/node_modules/**
+
+name: Deploy via SFTP to Sakura
 
 on:
   push:
     branches:
-      - main  # または `master` など、使用しているブランチ名
+      - main
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
 
-    - name: Deploy to Sakura via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ secrets.FTP_TARGET_DIR }}/
-        exclude: |
-          **/.git*
-          **/.github*
-          **/node_modules/**
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy files via SFTP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          source: "wp-data/wp-content/themes/*"
+          target: ${{ secrets.SFTP_TARGET }}
