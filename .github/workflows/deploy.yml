@@ -19,6 +19,7 @@ jobs:
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: ${{ secrets.FTP_TARGET_DIR }}/
+        local-dir: wp-data/wp-content/themes/swell_child
         exclude: |
           **/.git*
           **/.github*
