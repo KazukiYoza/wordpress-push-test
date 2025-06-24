@@ -4,11 +4,12 @@
 # .gitignore 自体は追跡対象
 !.gitignore
 
+# GitHub Actions のワークフローは追跡
 !.github/
 !.github/workflows/
 !.github/workflows/deploy.yml
 
-# swell_child フォルダとすべての中身を追跡
+# swell_child フォルダとすべての中身を追跡（階層ごと）
 !wp-data/
 !wp-data/wp-content/
 !wp-data/wp-content/themes/
